@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+string vacation(int age) {
+    if ((age >= 16) && (age <= 21)) {
+        return "Do you want to go to the mall? (Y | N): ";
+    }
+    else if ((age >= 22) && (age <= 30)) {
+        return "Do you want to go to Hawaii? (Y | N): ";
+    }
+    else if ((age < 16) && (age > 30)) {
+        return "You are not allowed to go out. (Y | N): ";
+    }
+    else {
+        return "Incorrect.";
+    }
+}
+
+string resp(char res) {
+
+    switch (res) {
+    case 'Y':
+    case'y':
+        return "Enjoy";
+        break;
+
+    case 'N':
+    case 'n':
+        return "Ok";
+        break;
+    }
+}
+int main()
+{
+    cout << "Enter your age: " << endl;
+    int userInput;
+    cin >> userInput;
+
+    cout << vacation(userInput) << endl;
+    char oper;
+    cin >> oper;
+    
+    cout << resp(oper);
+    return 0;
+}
